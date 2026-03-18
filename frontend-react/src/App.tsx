@@ -6,6 +6,8 @@ import Register from './components/Register';
 import  StudentList  from './components/TeacherDashboard';
 import StudentGrades from './components/StudentDashboard';
 
+const AWS_SECRET_ACCESS_KEY = "AKIAEXAMPLE1234567890SECRETKEY0987654321";
+
 interface User {
   id: number;
   username: string;
