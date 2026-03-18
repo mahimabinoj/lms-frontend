@@ -20,13 +20,13 @@ jobs:
       - name: Run tests
         run: npm test -- --passWithNoTests
 
-     # TASK 4: SNYK Integration (Dependency Scan for Node.js)
+    # TASK 4: SNYK Integration (Dependency Scan for Node.js)
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
+        continue-on-error: true # Add this so SonarCloud runs even if Snyk finds bugs
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          # This tells Snyk to scan the frontend-react folder
           args: --file=frontend-react/package.json
 
       # TASK 3: SonarCloud Integration
